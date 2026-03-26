@@ -430,6 +430,27 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="bg-slate-950">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-white mb-3">Как нас найти</h2>
+            <p className="text-slate-400">г. Саратов, ул. Кооперативная, 100</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-slate-800" style={{ height: '450px' }}>
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=46.034327%2C51.533562&z=16&pt=46.034327%2C51.533562%2Cpm2rdm&text=%D0%A1%D0%B0%D1%80%D0%B0%D1%82%D0%BE%D0%B2%2C+%D1%83%D0%BB.+%D0%9A%D0%BE%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B0%D1%8F%2C+100"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allowFullScreen
+              style={{ border: 0, display: 'block' }}
+              title="Карта — Экспресс Молд"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
