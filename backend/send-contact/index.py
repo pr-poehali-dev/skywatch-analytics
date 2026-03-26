@@ -1,5 +1,5 @@
 """
-Отправка заявки с контактной формы сайта Экспресс Молд на почту stukin1@yandex.ru
+Отправка заявки с контактной формы сайта Экспресс Молд на почту rizat.sundetov@yandex.ru
 """
 import json
 import smtplib
@@ -32,8 +32,8 @@ def handler(event: dict, context) -> dict:
         }
 
     smtp_password = os.environ['SMTP_PASSWORD']
-    sender = 'stukin1@yandex.ru'
-    recipient = 'stukin1@yandex.ru'
+    sender = 'rizat.sundetov@yandex.ru'
+    recipient = 'rizat.sundetov@yandex.ru'
 
     msg = MIMEMultipart('alternative')
     msg['Subject'] = f'Новая заявка с сайта — {name}'
