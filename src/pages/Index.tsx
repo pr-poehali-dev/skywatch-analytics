@@ -1,9 +1,42 @@
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Icon from "@/components/ui/icon"
 
+const SEND_URL = "https://functions.poehali.dev/f03e75e1-3d35-4986-a049-0995ce2ea9f8"
+
 export default function Portfolio() {
+  const [form, setForm] = useState({ name: '', company: '', contact: '', message: '' })
+  const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle')
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleSubmit = async () => {
+    if (!form.name || !form.contact || !form.message) {
+      setStatus('error')
+      return
+    }
+    setStatus('sending')
+    try {
+      const res = await fetch(SEND_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setStatus('ok')
+        setForm({ name: '', company: '', contact: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Navigation */}
@@ -12,18 +45,10 @@ export default function Portfolio() {
           <div className="flex justify-between items-center h-16">
             <div className="font-bold text-xl text-slate-900">Экспресс Молд</div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-slate-600 hover:text-slate-900 transition-colors">
-                О компании
-              </a>
-              <a href="#services" className="text-slate-600 hover:text-slate-900 transition-colors">
-                Услуги
-              </a>
-              <a href="#projects" className="text-slate-600 hover:text-slate-900 transition-colors">
-                Выполненные работы
-              </a>
-              <a href="#contact" className="text-slate-600 hover:text-slate-900 transition-colors">
-                Контакты
-              </a>
+              <a href="#about" className="text-slate-600 hover:text-slate-900 transition-colors">О компании</a>
+              <a href="#services" className="text-slate-600 hover:text-slate-900 transition-colors">Услуги</a>
+              <a href="#projects" className="text-slate-600 hover:text-slate-900 transition-colors">Выполненные работы</a>
+              <a href="#contact" className="text-slate-600 hover:text-slate-900 transition-colors">Контакты</a>
             </div>
           </div>
         </div>
@@ -43,11 +68,11 @@ export default function Portfolio() {
                 Воплощаем вашу идею от тестового образца до серийного выпуска.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                   Обсудить проект
                   <Icon name="ArrowRight" className="ml-2 h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
                   Наши работы
                 </Button>
               </div>
@@ -222,14 +247,10 @@ export default function Portfolio() {
                 />
               </div>
               <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle>Приборы для нефтегазового комплекса</CardTitle>
-                    <CardDescription>
-                      Корпуса и элементы сигнализирующих и управляющих приборов. Изготовлено литьём под давлением на ТПА 160т.
-                    </CardDescription>
-                  </div>
-                </div>
+                <CardTitle>Приборы для нефтегазового комплекса</CardTitle>
+                <CardDescription>
+                  Корпуса и элементы сигнализирующих и управляющих приборов. Изготовлено литьём под давлением на ТПА 160т.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -253,14 +274,10 @@ export default function Portfolio() {
                 />
               </div>
               <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle>Запорная арматура и бытовая электроника</CardTitle>
-                    <CardDescription>
-                      Пластиковые элементы запорной арматуры и корпуса бытовых электронных изделий. Полный цикл от оснастки до партии.
-                    </CardDescription>
-                  </div>
-                </div>
+                <CardTitle>Запорная арматура и бытовая электроника</CardTitle>
+                <CardDescription>
+                  Пластиковые элементы запорной арматуры и корпуса бытовых электронных изделий. Полный цикл от оснастки до партии.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -303,7 +320,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <p className="font-semibold">Email</p>
-                    <p className="text-slate-300">info@express-mold.ru</p>
+                    <p className="text-slate-300">info@systemgaz.ru</p>
                   </div>
                 </div>
 
@@ -313,7 +330,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <p className="font-semibold">Телефон</p>
-                    <p className="text-slate-300">+7 (___) ___-__-__</p>
+                    <p className="text-slate-300">+7 (8452) 740–850</p>
                   </div>
                 </div>
 
@@ -323,7 +340,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <p className="font-semibold">Адрес</p>
-                    <p className="text-slate-300">Россия</p>
+                    <p className="text-slate-300">г. Саратов, ул. Кооперативная, 100</p>
                   </div>
                 </div>
               </div>
@@ -337,44 +354,76 @@ export default function Portfolio() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">Имя</label>
-                    <input
-                      type="text"
-                      className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="Иван"
-                    />
+                {status === 'ok' ? (
+                  <div className="flex flex-col items-center justify-center py-8 gap-4 text-center">
+                    <Icon name="CheckCircle" className="h-12 w-12 text-green-400" />
+                    <p className="text-white text-lg font-semibold">Заявка отправлена!</p>
+                    <p className="text-slate-300">Мы свяжемся с вами в ближайшее время.</p>
+                    <Button variant="outline" className="text-white border-slate-500" onClick={() => setStatus('idle')}>
+                      Отправить ещё
+                    </Button>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">Компания</label>
-                    <input
-                      type="text"
-                      className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="ООО Ромашка"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Email или телефон</label>
-                  <input
-                    type="email"
-                    className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="ivan@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Описание задачи</label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Расскажите об изделии, нужном тираже и сроках..."
-                  />
-                </div>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  Отправить заявку
-                  <Icon name="ArrowRight" className="ml-2 h-4 w-4" />
-                </Button>
+                ) : (
+                  <>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-slate-300 mb-2">Имя *</label>
+                        <input
+                          name="name"
+                          type="text"
+                          value={form.name}
+                          onChange={handleChange}
+                          className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="Иван"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-slate-300 mb-2">Компания</label>
+                        <input
+                          name="company"
+                          type="text"
+                          value={form.company}
+                          onChange={handleChange}
+                          className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="ООО Ромашка"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-slate-300 mb-2">Email или телефон *</label>
+                      <input
+                        name="contact"
+                        type="text"
+                        value={form.contact}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="ivan@example.com или +7 (___) ___-__-__"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-slate-300 mb-2">Описание задачи *</label>
+                      <textarea
+                        name="message"
+                        rows={4}
+                        value={form.message}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Расскажите об изделии, нужном тираже и сроках..."
+                      />
+                    </div>
+                    {status === 'error' && (
+                      <p className="text-red-400 text-sm">Заполните все обязательные поля или попробуйте позже.</p>
+                    )}
+                    <Button
+                      className="w-full bg-blue-600 hover:bg-blue-700"
+                      onClick={handleSubmit}
+                      disabled={status === 'sending'}
+                    >
+                      {status === 'sending' ? 'Отправляем...' : 'Отправить заявку'}
+                      {status !== 'sending' && <Icon name="ArrowRight" className="ml-2 h-4 w-4" />}
+                    </Button>
+                  </>
+                )}
               </CardContent>
             </Card>
           </div>
