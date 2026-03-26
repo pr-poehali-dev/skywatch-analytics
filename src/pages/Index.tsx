@@ -384,6 +384,86 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Reviews Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Отзывы клиентов</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Нам доверяют компании из разных отраслей
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-lg">
+              <CardContent className="pt-6">
+                <div className="flex mb-4">
+                  {[1,2,3,4,5].map(i => (
+                    <Icon key={i} name="Star" className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-slate-600 mb-6 leading-relaxed italic">
+                  «Заказывали корпуса для датчиков давления. Оснастку сделали быстро, качество литья — отличное. Уже третий раз работаем с "Экспресс Молд" и всегда довольны результатом.»
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Icon name="User" className="h-5 w-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900">Андрей Волков</p>
+                    <p className="text-sm text-slate-500">ООО «НефтеПрибор», г. Саратов</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardContent className="pt-6">
+                <div className="flex mb-4">
+                  {[1,2,3,4,5].map(i => (
+                    <Icon key={i} name="Star" className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-slate-600 mb-6 leading-relaxed italic">
+                  «Обратились с нестандартной задачей — мелкосерийные детали для детского конструктора. Ребята предложили оптимальную оснастку под наш тираж, уложились в сроки и бюджет.»
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <Icon name="User" className="h-5 w-5 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900">Марина Соколова</p>
+                    <p className="text-sm text-slate-500">ТД «Игрушки Поволжья», г. Самара</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardContent className="pt-6">
+                <div className="flex mb-4">
+                  {[1,2,3,4,5].map(i => (
+                    <Icon key={i} name="Star" className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-slate-600 mb-6 leading-relaxed italic">
+                  «Производим офисные органайзеры. "Экспресс Молд" — наш надёжный партнёр по пластиковым деталям. Цены честные, коммуникация быстрая, брака практически нет.»
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Icon name="User" className="h-5 w-5 text-purple-600" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900">Дмитрий Лебедев</p>
+                    <p className="text-sm text-slate-500">ЗАО «ОфисКомплект», г. Москва</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -429,7 +509,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <p className="font-semibold">Адрес</p>
-                    <p className="text-slate-300">г. Саратов, ул. Кооперативная, 100</p>
+                    <p className="text-slate-300">г. Саратов, ул. Кооперативная, 100литВ</p>
                   </div>
                 </div>
               </div>
@@ -524,11 +604,11 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-white mb-3">Как нас найти</h2>
-            <p className="text-slate-400">г. Саратов, ул. Кооперативная, 100</p>
+            <p className="text-slate-400">г. Саратов, ул. Кооперативная, 100литВ</p>
           </div>
           <div className="rounded-2xl overflow-hidden border border-slate-800" style={{ height: '450px' }}>
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=46.034327%2C51.533562&z=16&pt=46.034327%2C51.533562%2Cpm2rdm&text=%D0%A1%D0%B0%D1%80%D0%B0%D1%82%D0%BE%D0%B2%2C+%D1%83%D0%BB.+%D0%9A%D0%BE%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B0%D1%8F%2C+100"
+              src="https://yandex.ru/map-widget/v1/?ll=46.044785%2C51.552775&z=17&pt=46.044785%2C51.552775%2Cpm2rdm&text=%D0%A1%D0%B0%D1%80%D0%B0%D1%82%D0%BE%D0%B2%2C+%D1%83%D0%BB.+%D0%9A%D0%BE%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B0%D1%8F%2C+100%D0%BB%D0%B8%D1%82%D0%92"
               width="100%"
               height="100%"
               frameBorder="0"
