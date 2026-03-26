@@ -55,15 +55,23 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section
+        className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative"
+        style={{
+          backgroundImage: 'url(https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/files/40da4465-0be5-4b6e-a5d8-35e1db37c26c.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-slate-900/70" />
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">Мелкосерийное производство</Badge>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Литьё пластика под давлением — от <span className="text-blue-600">500 штук</span> до серии
               </h1>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-xl text-slate-300 mb-8 leading-relaxed">
                 Проектируем малоресурсную оснастку и изготавливаем пластиковые изделия на термопластавтоматах.
                 Воплощаем вашу идею от тестового образца до серийного выпуска.
               </p>
@@ -238,6 +246,87 @@ export default function Portfolio() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="relative h-48 bg-gradient-to-r from-orange-400 to-pink-500">
+                <img
+                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/files/6cbd9514-97a4-472c-8101-581b40bea5c3.jpg"
+                  alt="Электронные изделия бытового назначения"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Электронные изделия бытового назначения</CardTitle>
+                <CardDescription>
+                  Корпуса и элементы умных розеток, пультов управления, датчиков движения и бытовых приборов. Точное литьё под давлением с высоким качеством поверхности.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="outline">Бытовая электроника</Badge>
+                  <Badge variant="outline">ТПА 130т</Badge>
+                  <Badge variant="outline">Серия 2000 шт</Badge>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
+                  <span>Высокое качество поверхности</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="relative h-48 bg-gradient-to-r from-yellow-400 to-red-400">
+                <img
+                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/files/7119d99f-00fd-4d05-80fa-79c548fe6d4a.jpg"
+                  alt="Игрушки для детей"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Игрушки для детей</CardTitle>
+                <CardDescription>
+                  Пластиковые детали конструкторов, фигурки и элементы развивающих игрушек. Используем безопасный пластик, сертифицированный для детской продукции.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="outline">Детские товары</Badge>
+                  <Badge variant="outline">Безопасный пластик</Badge>
+                  <Badge variant="outline">Серия 3000 шт</Badge>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
+                  <span>Сертифицировано для детей</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="relative h-48 bg-gradient-to-r from-teal-500 to-cyan-600">
+                <img
+                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/files/50312541-ccde-455e-a2a6-e6289c6f6516.jpg"
+                  alt="Офисные принадлежности"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Офисные принадлежности</CardTitle>
+                <CardDescription>
+                  Подставки для канцелярии, органайзеры, корпуса степлеров, лотки для бумаги и другие офисные аксессуары. Оптимальное соотношение цены оснастки и тиража.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="outline">Канцелярия</Badge>
+                  <Badge variant="outline">ТПА 160т</Badge>
+                  <Badge variant="outline">Серия 1000 шт</Badge>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
+                  <span>Выгодная стоимость оснастки</span>
+                </div>
+              </CardContent>
+            </Card>
+
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
               <div className="relative h-48 bg-gradient-to-r from-blue-500 to-purple-600">
                 <img
