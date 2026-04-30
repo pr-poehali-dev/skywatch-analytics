@@ -276,7 +276,7 @@ export default function Portfolio() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
               <div className="relative h-48 bg-gradient-to-r from-yellow-400 to-red-400">
                 <img
-                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/files/7119d99f-00fd-4d05-80fa-79c548fe6d4a.jpg"
+                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/3fd8588a-aeb2-419b-a026-259ed1e16c77.jpg"
                   alt="Игрушки для детей"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -284,18 +284,18 @@ export default function Portfolio() {
               <CardHeader>
                 <CardTitle>Игрушки для детей</CardTitle>
                 <CardDescription>
-                  Пластиковые детали конструкторов, фигурки и элементы развивающих игрушек. Используем безопасный пластик, сертифицированный для детской продукции.
+                  Интересный проект от нашего нового заказчика. Целью было реанимировать старую детскую игрушку. В результате детская забава переросла в реальный продукт для маркетплейсов. В настоящее время ведётся подготовка к мелкосерийному выпуску партии в 500 изделий для тестирования рынка. Расчётная стойкость комплекта пресс-форм — 3000 отливок.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">Детские товары</Badge>
                   <Badge variant="outline">Безопасный пластик</Badge>
-                  <Badge variant="outline">Серия 3000 шт</Badge>
+                  <Badge variant="outline">Серия 500 шт</Badge>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-slate-600">
                   <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
-                  <span>Сертифицировано для детей</span>
+                  <span>Подготовка к серийному выпуску</span>
                 </div>
               </CardContent>
             </Card>
