@@ -380,6 +380,33 @@ export default function Portfolio() {
                 </div>
               </CardContent>
             </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="relative h-48 bg-gradient-to-r from-green-400 to-teal-500">
+                <img
+                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/462ab318-5600-462a-b59d-bbb180048bb8.jpg"
+                  alt="Концепт зубных щёток для ВкусВилл"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Концепт зубных щёток для «ВкусВилл»</CardTitle>
+                <CardDescription>
+                  Разработка дизайн-концепции и визуальных материалов для потенциальной собственной линейки ритейлера. Выполнены: промышленный дизайн, эргономическая проработка, набор 3D-рендеров высокого качества. Проект закрыт на стадии концепта, все артефакты переданы заказчику. Стоимость разработки: 30 000 ₽.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="outline">Промдизайн</Badge>
+                  <Badge variant="outline">3D-рендеры</Badge>
+                  <Badge variant="outline">ВкусВилл</Badge>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
+                  <span>Артефакты переданы заказчику</span>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
