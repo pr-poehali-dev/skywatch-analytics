@@ -1,14 +1,22 @@
 import { useState } from "react"
+import React from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Icon from "@/components/ui/icon"
+import { useInView } from "@/hooks/useInView"
 
 const SEND_URL = "https://functions.poehali.dev/f03e75e1-3d35-4986-a049-0995ce2ea9f8"
 
 export default function Portfolio() {
   const [form, setForm] = useState({ name: '', company: '', contact: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle')
+
+  const about = useInView()
+  const services = useInView()
+  const projects = useInView()
+  const reviews = useInView()
+  const contact = useInView()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -112,9 +120,9 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-white" ref={about.ref as React.RefObject<HTMLElement>}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 reveal ${about.inView ? 'visible' : ''}`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">О компании</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               ООО «Экспресс Молд» — производство мелкосерийных партий пластиковых изделий методом литья под давлением
@@ -122,7 +130,7 @@ export default function Portfolio() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className={`reveal-left ${about.inView ? 'visible' : ''} reveal-delay-2`}>
               <h3 className="text-2xl font-bold text-slate-900 mb-6">Решение для запуска новых изделий</h3>
               <p className="text-slate-600 mb-6 leading-relaxed">
                 Стоимость оснастки для серийного производства — значительный барьер при запуске нового продукта.
@@ -154,7 +162,7 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div className={`relative reveal-right ${about.inView ? 'visible' : ''} reveal-delay-3`}>
               <img
                 src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/files/1c9811a5-3a14-4e55-bc1d-7f98d1ecdc7f.jpg"
                 alt="Производственный цех Экспресс Молд"
@@ -166,9 +174,9 @@ export default function Portfolio() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-slate-50">
+      <section id="services" className="py-20 bg-slate-50" ref={services.ref as React.RefObject<HTMLElement>}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 reveal ${services.inView ? 'visible' : ''}`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Услуги</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Полный спектр услуг в области проектирования и производства пластиковых изделий
@@ -176,7 +184,7 @@ export default function Portfolio() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow reveal ${services.inView ? 'visible' : ''} reveal-delay-1`}>
               <CardHeader>
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Icon name="Layers" className="h-6 w-6 text-blue-600" />
@@ -196,7 +204,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow reveal ${services.inView ? 'visible' : ''} reveal-delay-2`}>
               <CardHeader>
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Icon name="RefreshCw" className="h-6 w-6 text-green-600" />
@@ -214,7 +222,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow reveal ${services.inView ? 'visible' : ''} reveal-delay-3`}>
               <CardHeader>
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Icon name="Cpu" className="h-6 w-6 text-purple-600" />
@@ -236,9 +244,9 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-white">
+      <section id="projects" className="py-20 bg-white" ref={projects.ref as React.RefObject<HTMLElement>}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 reveal ${projects.inView ? 'visible' : ''}`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Выполненные работы</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Примеры реализованных проектов в различных отраслях промышленности
@@ -246,7 +254,7 @@ export default function Portfolio() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-1`}>
               <div className="relative h-48 bg-gradient-to-r from-orange-400 to-pink-500">
                 <img
                   src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/9cb0e658-a7c1-453e-8751-4ba3b696197e.jpg"
@@ -273,7 +281,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-2`}>
               <div className="relative h-48 bg-gradient-to-r from-yellow-400 to-red-400">
                 <img
                   src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/3fd8588a-aeb2-419b-a026-259ed1e16c77.jpg"
@@ -300,7 +308,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-3`}>
               <div className="relative h-48 bg-gradient-to-r from-teal-500 to-cyan-600">
                 <img
                   src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/5932ae3c-34b9-41cd-89ac-9c9a575298fd.jpg"
@@ -327,7 +335,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-4`}>
               <div className="relative h-48 bg-gradient-to-r from-blue-500 to-purple-600">
                 <img
                   src="https://systemgaz.ru/f/services/2019/06/_5d0375fecffbd3.jpg"
@@ -354,7 +362,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-5`}>
               <div className="relative h-48 bg-gradient-to-r from-green-500 to-blue-600">
                 <img
                   src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/9e02b37a-36c1-4966-8965-cc094009902f.jpg"
@@ -381,7 +389,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-5`}>
               <div className="relative h-48 bg-gradient-to-r from-green-400 to-teal-500">
                 <img
                   src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/462ab318-5600-462a-b59d-bbb180048bb8.jpg"
@@ -412,9 +420,9 @@ export default function Portfolio() {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-slate-50" ref={reviews.ref as React.RefObject<HTMLElement>}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 reveal ${reviews.inView ? 'visible' : ''}`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Отзывы клиентов</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Нам доверяют компании из разных отраслей
@@ -422,7 +430,7 @@ export default function Portfolio() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-0 shadow-lg">
+            <Card className={`border-0 shadow-lg reveal ${reviews.inView ? 'visible' : ''} reveal-delay-1`}>
               <CardContent className="pt-6">
                 <div className="flex mb-4">
                   {[1,2,3,4,5].map(i => (
@@ -444,7 +452,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg">
+            <Card className={`border-0 shadow-lg reveal ${reviews.inView ? 'visible' : ''} reveal-delay-2`}>
               <CardContent className="pt-6">
                 <div className="flex mb-4">
                   {[1,2,3,4,5].map(i => (
@@ -466,7 +474,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg">
+            <Card className={`border-0 shadow-lg reveal ${reviews.inView ? 'visible' : ''} reveal-delay-3`}>
               <CardContent className="pt-6">
                 <div className="flex mb-4">
                   {[1,2,3,4,5].map(i => (
@@ -492,9 +500,9 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-slate-900 text-white">
+      <section id="contact" className="py-20 bg-slate-900 text-white" ref={contact.ref as React.RefObject<HTMLElement>}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 reveal ${contact.inView ? 'visible' : ''}`}>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Обсудим ваш проект</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               Готовы воплотить вашу идею от тестового образца до крупносерийного выпуска
@@ -502,7 +510,7 @@ export default function Portfolio() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            <div>
+            <div className={`reveal-left ${contact.inView ? 'visible' : ''} reveal-delay-2`}>
               <h3 className="text-2xl font-bold mb-6">Свяжитесь с нами</h3>
               <p className="text-slate-300 mb-8 leading-relaxed">
                 Планируете запуск нового изделия? Нужна мелкосерийная партия? Расскажите о задаче —
@@ -542,7 +550,7 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <Card className="bg-slate-800 border-slate-700">
+            <Card className={`bg-slate-800 border-slate-700 reveal-right ${contact.inView ? 'visible' : ''} reveal-delay-3`}>
               <CardHeader>
                 <CardTitle className="text-white">Оставить заявку</CardTitle>
                 <CardDescription className="text-slate-300">
