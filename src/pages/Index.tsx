@@ -71,7 +71,7 @@ export default function Portfolio() {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-slate-900/70" />
+        <div className="absolute inset-0 hero-overlay" />
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
