@@ -357,7 +357,7 @@ export default function Portfolio() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
               <div className="relative h-48 bg-gradient-to-r from-green-500 to-blue-600">
                 <img
-                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/files/1c9811a5-3a14-4e55-bc1d-7f98d1ecdc7f.jpg"
+                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/9e02b37a-36c1-4966-8965-cc094009902f.jpg"
                   alt="Запорная арматура"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -365,18 +365,18 @@ export default function Portfolio() {
               <CardHeader>
                 <CardTitle>Запорная арматура и бытовая электроника</CardTitle>
                 <CardDescription>
-                  Пластиковые элементы запорной арматуры и корпуса бытовых электронных изделий. Полный цикл от оснастки до партии.
+                  Реинжиниринг электромагнитного клапана. Разработана альтернативная конструкция, свободная от ограничений действующего патента. Гидродинамические параметры оптимизированы с помощью моделирования в ANSYS и подтверждены испытаниями на сертифицированном расходомерном стенде. Итог: повышены пропускная способность и надёжность изделия, получены новые патенты на полезную модель. Клапан выпускается серийно.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="outline">Арматура</Badge>
-                  <Badge variant="outline">Электроника</Badge>
-                  <Badge variant="outline">ТПА 250т</Badge>
+                  <Badge variant="outline">Реинжиниринг</Badge>
+                  <Badge variant="outline">ANSYS</Badge>
+                  <Badge variant="outline">Серийный выпуск</Badge>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-slate-600">
                   <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
-                  <span>Реализован полный цикл</span>
+                  <span>Получены новые патенты</span>
                 </div>
               </CardContent>
             </Card>
