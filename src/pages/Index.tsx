@@ -330,15 +330,15 @@ export default function Portfolio() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
               <div className="relative h-48 bg-gradient-to-r from-blue-500 to-purple-600">
                 <img
-                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/files/7909ac41-b1fa-4a0f-b9ff-0befd617af3c.jpg"
-                  alt="Сигнализирующие и управляющие приборы"
+                  src="https://systemgaz.ru/f/services/2019/06/_5d0375fecffbd3.jpg"
+                  alt="Блок диспетчеризации котельной"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
               <CardHeader>
                 <CardTitle>Приборы для нефтегазового комплекса</CardTitle>
                 <CardDescription>
-                  Корпуса и элементы сигнализирующих и управляющих приборов. Изготовлено литьём под давлением на ТПА 160т.
+                  Блок диспетчеризации котельной. Прибор позволяет осуществлять мониторинг аварийных параметров, управление исполнительными устройствами и передачу информации на удалённый пункт контроля различными способами. Был осуществлён полный цикл прибора начиная от составления технического задания до серийного выпуска изделия. При изготовлении прибора пайка SMD компонентов осуществляется автоматизированным способом.
                 </CardDescription>
               </CardHeader>
               <CardContent>
