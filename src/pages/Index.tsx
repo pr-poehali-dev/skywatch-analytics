@@ -249,7 +249,7 @@ export default function Portfolio() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
               <div className="relative h-48 bg-gradient-to-r from-orange-400 to-pink-500">
                 <img
-                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/files/6cbd9514-97a4-472c-8101-581b40bea5c3.jpg"
+                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/1e6a2277-bc54-4d90-ac29-477965d150a4.jpg"
                   alt="Электронные изделия бытового назначения"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -257,7 +257,7 @@ export default function Portfolio() {
               <CardHeader>
                 <CardTitle>Электронные изделия бытового назначения</CardTitle>
                 <CardDescription>
-                  Корпуса и элементы умных розеток, пультов управления, датчиков движения и бытовых приборов. Точное литьё под давлением с высоким качеством поверхности.
+                  Корпус сигнализатора загазованности. Прибор предназначен для обнаружения довзрывоопасных концентраций метана и опасных для жизни уровней угарного газа в контролируемых помещениях. При разработке корпуса мы учли все технические требования заказчика, оптимизировали конструкцию для литья пластмасс под давлением и уделили особое внимание эргономике и промышленному дизайну.
                 </CardDescription>
               </CardHeader>
               <CardContent>
