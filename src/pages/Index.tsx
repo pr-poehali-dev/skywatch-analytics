@@ -282,60 +282,6 @@ export default function Portfolio() {
             </Card>
 
             <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-2`}>
-              <div className="relative h-48 bg-gradient-to-r from-yellow-400 to-red-400">
-                <img
-                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/3fd8588a-aeb2-419b-a026-259ed1e16c77.jpg"
-                  alt="Игрушки для детей"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Игрушки для детей</CardTitle>
-                <CardDescription>
-                  Интересный проект от нашего нового заказчика. Целью было реанимировать старую детскую игрушку. В результате детская забава переросла в реальный продукт для маркетплейсов. В настоящее время ведётся подготовка к мелкосерийному выпуску партии в 500 изделий для тестирования рынка. Расчётная стойкость комплекта пресс-форм — 3000 отливок.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="outline">Детские товары</Badge>
-                  <Badge variant="outline">Безопасный пластик</Badge>
-                  <Badge variant="outline">Серия 500 шт</Badge>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-slate-600">
-                  <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
-                  <span>Подготовка к серийному выпуску</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-3`}>
-              <div className="relative h-48 bg-gradient-to-r from-teal-500 to-cyan-600">
-                <img
-                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/5932ae3c-34b9-41cd-89ac-9c9a575298fd.jpg"
-                  alt="Офисные принадлежности"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Офисные принадлежности</CardTitle>
-                <CardDescription>
-                  Подставки для канцелярии, органайзеры, корпуса степлеров, лотки для бумаги и другие офисные аксессуары. Оптимальное соотношение цены оснастки и тиража.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="outline">Канцелярия</Badge>
-                  <Badge variant="outline">ТПА 160т</Badge>
-                  <Badge variant="outline">Серия 1000 шт</Badge>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-slate-600">
-                  <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
-                  <span>Выгодная стоимость оснастки</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-4`}>
               <div className="relative h-48 bg-gradient-to-r from-blue-500 to-purple-600">
                 <img
                   src="https://systemgaz.ru/f/services/2019/06/_5d0375fecffbd3.jpg"
@@ -362,7 +308,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-5`}>
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-3`}>
               <div className="relative h-48 bg-gradient-to-r from-green-500 to-blue-600">
                 <img
                   src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/9e02b37a-36c1-4966-8965-cc094009902f.jpg"
@@ -385,6 +331,60 @@ export default function Portfolio() {
                 <div className="flex items-center gap-2 text-sm text-slate-600">
                   <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
                   <span>Получены новые патенты</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-4`}>
+              <div className="relative h-48 bg-gradient-to-r from-teal-500 to-cyan-600">
+                <img
+                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/5932ae3c-34b9-41cd-89ac-9c9a575298fd.jpg"
+                  alt="Офисные принадлежности"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Офисные принадлежности</CardTitle>
+                <CardDescription>
+                  Подставки для канцелярии, органайзеры, корпуса степлеров, лотки для бумаги и другие офисные аксессуары. Оптимальное соотношение цены оснастки и тиража.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="outline">Канцелярия</Badge>
+                  <Badge variant="outline">ТПА 160т</Badge>
+                  <Badge variant="outline">Серия 1000 шт</Badge>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
+                  <span>Выгодная стоимость оснастки</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className={`border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden reveal ${projects.inView ? 'visible' : ''} reveal-delay-5`}>
+              <div className="relative h-48 bg-gradient-to-r from-yellow-400 to-red-400">
+                <img
+                  src="https://cdn.poehali.dev/projects/574fd804-9934-4f8b-8800-16aec8a014fe/bucket/3fd8588a-aeb2-419b-a026-259ed1e16c77.jpg"
+                  alt="Игрушки для детей"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Игрушки для детей</CardTitle>
+                <CardDescription>
+                  Интересный проект от нашего нового заказчика. Целью было реанимировать старую детскую игрушку. В результате детская забава переросла в реальный продукт для маркетплейсов. В настоящее время ведётся подготовка к мелкосерийному выпуску партии в 500 изделий для тестирования рынка. Расчётная стойкость комплекта пресс-форм — 3000 отливок.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="outline">Детские товары</Badge>
+                  <Badge variant="outline">Безопасный пластик</Badge>
+                  <Badge variant="outline">Серия 500 шт</Badge>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <Icon name="CheckCircle" className="h-4 w-4 text-green-500" />
+                  <span>Подготовка к серийному выпуску</span>
                 </div>
               </CardContent>
             </Card>
